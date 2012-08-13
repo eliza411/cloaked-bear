@@ -1,0 +1,4 @@
+# Local config for development.
+
+imports:
+  - behat.base.yml
