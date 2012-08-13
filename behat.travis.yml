@@ -1,0 +1,9 @@
+# Configuration for Travis CI.
+imports:
+  - behat.base.yml
+
+default:
+  extensions:
+    Behat\MinkExtension\Extension:
+      base_url: 'http://localhost:8888'
+
