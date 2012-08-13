@@ -1,0 +1,12 @@
+{
+    "repositories": [
+        {
+            "type": "pear",
+            "url": "http://pear.drush.org",
+            "vendor-alias": "drush"
+        }
+    ],
+    "require": {
+        "drush/drush": "5.6"
+    }
+}
