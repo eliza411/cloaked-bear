@@ -1,12 +1,12 @@
 # Base configuration.
 default:
+  paths:
+    features:   'features'
+    bootstrap:  'features/bootstrap'
+
   extensions:
     Behat\MinkExtension\Extension:
       goutte: ~
       zombie: ~
-  paths:
-    features:   'features'
-    bootstrap:  'features/bootstrap'
-  context:
-    parameters:
-      default_browser: 'goutte'
+      default_session: 'goutte'
+      javascript_session: 'zombie'
