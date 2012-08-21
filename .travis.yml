@@ -2,10 +2,6 @@ language: php
 php:
   - 5.3
 
-branches:
-  only:
-    - master
-
 install:
   - sudo apt-get --quiet=2 install php5-cgi php5-curl php5-gd php5-sqlite libgd2-xpm npm > /dev/null
   - npm install > /dev/null 2>&1
@@ -15,8 +11,8 @@ install:
 
 before_script:
   - drush -q make drush.make drupal
-  - drush -q -y -r $PWD/drupal site-install --db-url=sqlite://db.sqlite --account-pass=travis
+  - drush -q -y -r $PWD/drupal site-install --db-url=sqlite://db.sqlite --account-pass=travis standard
   - drush -r $PWD/drupal runserver :8888 > /dev/null &
   - sleep 4s
 
-script: behat -c behat.travis.yml
+script: behat -fprogress -c behat.travis.yml --tags='~@wip' 
