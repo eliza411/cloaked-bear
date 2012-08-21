@@ -2,10 +2,6 @@ language: php
 php:
   - 5.3
 
-branches:
-  only:
-    - master
-
 install:
   - sudo apt-get --quiet=2 install php5-cgi php5-curl php5-gd php5-sqlite libgd2-xpm npm > /dev/null
   - npm install > /dev/null 2>&1
